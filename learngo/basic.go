@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/cmplx"
+	"math"
+)
 
 var aa = 3		//函数外面不可以用:= ,因为在外面需要关键字进行开头（包内部的变量）
 var bb = 4
@@ -35,6 +39,18 @@ func variableShorter()  {
 	fmt.Println(a, b, c, d)
 }
 
+func eular()  {
+	e := 3 + 4i
+	fmt.Println(cmplx.Abs(e))
+}
+
+func triangle()  {		//类型都是强制转换的
+	var a ,b int = 3, 4
+	var c int
+	c = int(math.Sqrt(float64(a*a + b*b)))
+	fmt.Println(c)
+}
+
 func main() {
 	fmt.Println("Hello World")
 	variableZeroValue()
@@ -42,4 +58,7 @@ func main() {
 	variableTypeDeduction()
 	variableShorter()
 	fmt.Println(aaa, bbb, ccc)
+
+	eular()
+	triangle()
 }
