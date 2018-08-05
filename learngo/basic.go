@@ -51,6 +51,35 @@ func triangle()  {		//类型都是强制转换的
 	fmt.Println(c)
 }
 
+func consts()  {
+	const filename  = "abc.txt"	//const 使用与var相似
+	const a, b  = 3, 4		//不约定类型则类型不确定[常量相当于文本替换，常量的数值可以作为任何类型使用]
+	var c int
+	c = int(math.Sqrt(a*a + b*b))
+	fmt.Println(filename, c)
+}
+
+func enums()  {
+	const (
+		cpp = iota  //自增值
+		java
+		python
+		golang
+	)
+
+	const (
+		b = 1 << (10*iota)
+		kb
+		mb
+		gb
+		tb
+		pb
+	)
+
+	fmt.Println(cpp, java, python, golang)
+	fmt.Println(b, kb, mb, gb, tb, pb)
+}
+
 func main() {
 	fmt.Println("Hello World")
 	variableZeroValue()
@@ -61,4 +90,6 @@ func main() {
 
 	eular()
 	triangle()
+	consts()
+	enums()
 }
