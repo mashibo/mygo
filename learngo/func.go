@@ -56,6 +56,10 @@ func sum(numbers ... int) int {
 	return s
 }
 
+func swap(a, b *int)  {		//函数参数只能进行值传递
+	*a, *b  = *b, *a
+}
+
 func main() {
 	if result, error := eval(3, 4, ">"); error != nil {
 		fmt.Println("ERROR", error)
@@ -69,4 +73,8 @@ func main() {
 	fmt.Println(apply(pow, 3, 4))
 
 	fmt.Println(sum(1, 2, 3, 4, 5))
+
+	a, b := 3, 4
+	swap(&a, &b)
+	fmt.Println(a, b)
 }
